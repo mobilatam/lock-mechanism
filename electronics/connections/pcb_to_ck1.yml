@@ -1,0 +1,208 @@
+authors:
+    Created:
+      name: L. Acha Boiano
+      date: 2024-07-04
+
+connectors:
+  X1:
+    pincount: 2
+    type: JST-XH-2Y
+    subtype: macho
+    pinlabels: [+5V, GND]
+    image:
+      src: images/XHP-2.png
+      height: 70
+  X2:
+    pincount: 3
+    type: JST-XH-3Y
+    subtype: macho
+    pinlabels: [CANH, CANL, -]
+    image:
+      src: images/XHP-3.png
+      height: 100
+  X3:
+    pincount: 4
+    type: JST-XH-4Y  
+    subtype: macho
+    pinlabels: [BLO, BLC, DLO, DLC]
+    image:
+      src: images/XHP-4.png
+      height: 100
+  X4:
+    pincount: 6
+    type: JST-XH-6Y
+    subtype: macho
+    pinlabels: [GND, GND, +5V, +5V, PWM-BL, PWM-DL]
+    image:
+      src: images/XHP-6.png
+      height: 100
+  
+  X5:
+    pincount: 2
+    type: MTW-6030
+    subtype: macho
+    pinlabels: [CANH, CANL]
+    image:
+      src: images/MTW-2.png
+      height: 100
+  X6:
+    pincount: 9
+    type: MTW-6030
+    subtype: macho-hembra
+    pinlabels: [GND, GND, GND, BLO, BLC, +5V, +5V, GND, PWM-BL]
+    image:
+      src: images/MTW-9.png
+      height: 100
+  X7:
+    pincount: 6
+    type: MTW-6030
+    subtype: macho-hembra
+    pinlabels: [DLO, DLC, -, PWM-DL, +5V, GND]
+    image:
+      src: images/MTW-6.png
+      height: 100
+  X8:
+    pincount: 2
+    type: Final de Carrera
+    pinlabels: [GND, BLO]
+    image:
+      src: images/limit_switch.jpg
+      height: 100
+  X9:
+    pincount: 2
+    type: Final de Carrera
+    pinlabels: [GND, BLC]
+    image:
+      src: images/limit_switch.jpg
+      height: 100
+  X10:
+    pincount: 3
+    type: Servomotor
+    pinlabels: [GND, +5V, PWM]
+    image:
+      src: images/servo.png
+      height: 100
+  X11:
+    pincount: 2
+    type: Fuente
+    pinlabels: [+5V, GND]
+    image:
+      src: images/fuente.png
+      height: 135
+  X12:
+    pincount: 2
+    type: Final de Carrera
+    pinlabels: [GND, DLO]
+    image:
+      src: images/limit_switch.jpg
+      height: 100
+  X13:
+    pincount: 2
+    type: Final de Carrera
+    pinlabels: [GND, DLC]
+    image:
+      src: images/limit_switch.jpg
+      height: 100
+  X14:
+    pincount: 3
+    type: Servomotor
+    pinlabels: [GND, +5V, PWM]
+    image:
+      src: images/servo.png
+      height: 100
+
+cables:
+  W1:
+    wirecount: 2
+    length: 1
+    gauge: 22 AWG
+    colors: [YE, GN]
+
+  W2:
+    wirecount: 9
+    length: 1
+    gauge: 22 AWG
+    colors: [BK, BK, BK, WH, WH, RD, RD, BK, OG]
+
+  W3:
+    wirecount: 5
+    length: 1
+    gauge: 22 AWG
+    colors: [WH, WH, OG, RD, BK]
+
+  W4:
+    wirecount: 9
+    length: 1
+    gauge: 22 AWG
+    colors: [BK, WH, BK, WH, BK, RD, OG, RD, BK]
+
+  W5:
+    wirecount: 7
+    length: 1
+    gauge: 22 AWG
+    colors: [BK, WH, BK, WH, BK, RD, OG]
+
+connections:
+  -
+    - X1: [1-2]
+    - W2: [7-8]
+    - X6: [7-8]
+  -
+    - X2: [1-2]
+    - W1: [1-2]
+    - X5: [1-2]
+
+  -
+    - X3: [1-2]
+    - W2: [4-5]
+    - X6: [4-5]
+    
+  -
+    - X3: [3-4]
+    - W3: [1-2]
+    - X7: [1-2]
+
+  -
+    - X4: [1,1,1,3,5]
+    - W2: [1-3,6,9]
+    - X6: [1-3,6,9]
+  
+  -
+    - X4: [2,4,6]
+    - W3: [5,4,3]
+    - X7: [6,5,4]
+
+  -
+    - X6: [1, 4]
+    - W4: [1, 2]
+    - X8: [1, 2]
+
+  -
+    - X6: [2, 5]
+    - W4: [3, 4]
+    - X9: [1, 2]
+  
+  -
+    - X6: [3, 6, 9]
+    - W4: [5, 6, 7]
+    - X10: [1, 2, 3]
+
+  -
+    - X6: [7, 8]
+    - W4: [8, 9]
+    - X11: [1, 2]
+
+  -
+    - X7: [6, 1]
+    - W5: [1, 2]
+    - X12: [1, 2]
+
+  -
+    - X7: [6, 2]
+    - W5: [3, 4]
+    - X13: [1, 2]
+
+  -
+    - X7: [6, 5, 4]
+    - W5: [5, 6, 7]
+    - X14: [1, 2, 3]

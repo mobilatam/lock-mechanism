@@ -1,0 +1,15 @@
+Id	Description	Qty	Unit	Designators
+1	Cable, 2 x 22 AWG	1	m	W1
+2	Cable, 5 x 22 AWG	1	m	W3
+3	Cable, 7 x 22 AWG	1	m	W5
+4	Cable, 9 x 22 AWG	2	m	W2, W4
+5	Connector, Final de Carrera, 2 pins	4		X12, X13, X8, X9
+6	Connector, Fuente, 2 pins	1		X11
+7	Connector, JST-XH-2Y, macho, 2 pins	1		X1
+8	Connector, JST-XH-3Y, macho, 3 pins	1		X2
+9	Connector, JST-XH-4Y, macho, 4 pins	1		X3
+10	Connector, JST-XH-6Y, macho, 6 pins	1		X4
+11	Connector, MTW-6030, macho, 2 pins	1		X5
+12	Connector, MTW-6030, macho-hembra, 6 pins	1		X7
+13	Connector, MTW-6030, macho-hembra, 9 pins	1		X6
+14	Connector, Servomotor, 3 pins	2		X10, X14

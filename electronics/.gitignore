@@ -1,0 +1,12 @@
+# Proteus Design Suite specific files
+*.rte
+*.DO
+*.EDF
+*.log
+*.workspace
+*.sts
+*.xlsx
+*.oxps
+
+# Backup files
+Project Backups/
