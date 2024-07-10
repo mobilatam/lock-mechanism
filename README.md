@@ -37,12 +37,6 @@ El proyecto involucra varias conexiones como se ilustra en el siguiente diagrama
 
 ![Conexiones de PCB a CK1](electronics/connections/pcb_to_ck1.png)
 
-<style>
-table {
-width: 100%;
-}
-</style>
-
 Significado de los acrónimos:
 | Acrónimo | Description           | Descripción                    |
 |----------|------------------------|--------------------------------|
