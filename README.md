@@ -33,7 +33,11 @@ El programa también maneja estados intermedios para la apertura y cierre de los
 
 ## Conexiones
 
-El proyecto involucra varias conexiones como se ilustra en el siguiente diagrama. 
+Se diseñó un prototipo de PCB basado en la placa de desarrollo ESP32 de 38 pines.
+
+![Referencia de placa PCB](electronics/reference.png)
+
+Las conecciones del sistema se ilustran en el siguiente diagrama. 
 
 ![Conexiones de PCB a CK1](electronics/connections/pcb_to_ck1.png)
 
