@@ -1,8 +1,8 @@
 # Proyecto del Mecanismo de Bloqueo
 
-## Descripción General del Proyecto
+![Behavior](electronics/behavior.gif)
 
-El proyecto del Mecanismo de Bloqueo está diseñado para desarrollar un mecanismo robusto y eficiente para el intercambio de componentes electrónicos dentro de un sistema especificado. Este proyecto incluye componentes de hardware y software, integrando diversas disciplinas como electrónica, mecánica y sistemas embebidos.
+Este proyecto incluye componentes de hardware y software, integrando diversas disciplinas como electrónica, mecánica y sistemas embebidos.
 
 ## Estructura del Proyecto
 
