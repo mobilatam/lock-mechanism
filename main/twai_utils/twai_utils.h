@@ -16,8 +16,8 @@
 
 esp_err_t configure_twai(void);
 void handle_twai_message(twai_message_t message);
-void send_twai_message(uint8_t command);
-void send_closed_status(uint8_t src);
+void send_twai_message(uint32_t identifier, uint8_t status);
+void send_open_status(uint8_t src);
 void send_closed_status(uint8_t src);
 
 //GPIOs conectados al transceptor CAM(TWAI)

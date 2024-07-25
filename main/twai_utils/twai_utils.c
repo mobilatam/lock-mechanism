@@ -11,7 +11,7 @@
  *******************************************************************************/
 #include "../twai_utils/twai_utils.h"
 
-// Configuración del TWAI (CAN)
+// Configuración del TWAI (CAN) 
 esp_err_t configure_twai(void) {
     // Configura los parámetros generales del controlador TWAI
     twai_general_config_t g_config = TWAI_GENERAL_CONFIG_DEFAULT(CTX_IO, CRX_IO, TWAI_MODE_NORMAL);
@@ -36,7 +36,7 @@ esp_err_t configure_twai(void) {
 // Función para manejar los mensajes recibidos
 void handle_twai_message(twai_message_t message) {
     // Verifica el comando recibido y mueve el servomotor en consecuencia
-    ESP_LOGW(TWAI_TAG, "CAN ID: 0x%X", message.identifier);
+    ESP_LOGW(TWAI_TAG, "CAN ID: 0x%lX", message.identifier);
     switch (message.identifier) {
         case (0x10 << 24) | (0x16 << 19) | (0x00 << 16) | (0x04 << 8) | 0x00:
             // Process the first byte of the message data to unlock/lock the battery
@@ -57,15 +57,16 @@ void handle_twai_message(twai_message_t message) {
                         //CLOSE BL
                         if (~gpio_get_level(GPIO_BATTERY_LOCK_OPEN)){
                             lock_battery(); 
-                            send_close_status(0x16);
+                            send_closed_status(0x16);
                         }
                         break;
                     default:
                         ESP_LOGW(TWAI_TAG, "Unknown command received: 0x%X", command);
                         break;
-                } else {
+                } 
+            } else {
                 ESP_LOGW(TWAI_TAG, "Unexpected data length: %d", message.data_length_code);
-                }
+            }
         case (0x10 << 24) | (0x18 << 19) | (0x00 << 16) | (0x04 << 8) | 0x00: 
             // Process the first byte of the message data to unlock/lock the battery
             if (message.data_length_code == 8) {
@@ -85,13 +86,14 @@ void handle_twai_message(twai_message_t message) {
                         //CLOSE DL
                         if (~gpio_get_level(GPIO_DOOR_LOCK_OPEN)){
                             lock_door(); 
-                            send_close_status(0x18);
+                            send_closed_status(0x18);
                         }
                         break;
                     default:
                         ESP_LOGW(TWAI_TAG, "Unknown command received: 0x%X", command);
                         break;
-                } else {
+                }
+            } else {
                 ESP_LOGW(TWAI_TAG, "Unexpected data length: %d", message.data_length_code);
                 }
         default:
@@ -123,13 +125,13 @@ void send_twai_message(uint32_t identifier, uint8_t status) {
 
 // Function to send 'open' status
 void send_open_status(uint8_t src) {
-    uint32_t can_id = (src << 24) | (0x10 << 19) | (0x2 << 16) | (0x04 << 8) | 0x01;;
+    uint32_t can_id = (src << 24) | (0x10 << 19) | (0x2 << 16) | (0x04 << 8) | (0x01);
     send_twai_message(can_id, 0x01); // 0x01 represents 'unlocked'
 }
 
 // Function to send 'closed' status
 void send_closed_status(uint8_t src) {
-    uint32_t can_id = (src << 24) | (0x10 << 19) | (0x2 << 16) | (0x04 << 8) | 0x01;;
+    uint32_t can_id = (src << 24) | (0x10 << 19) | (0x2 << 16) | (0x04 << 8) | (0x01);
     send_twai_message(can_id, 0x00); // 0x00 represents 'locked'
 }
 
