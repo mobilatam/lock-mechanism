@@ -14,7 +14,9 @@
 				"idf.gitPath": "/usr/bin/git"
 			},
 			"extensions": [
-				"espressif.esp-idf-extension"
+				"espressif.esp-idf-extension",
+				"ms-azuretools.vscode-docker",
+				"ms-vscode.cpptools-extension-pack"
 			]
 		},
 		"codespaces": {
@@ -27,8 +29,10 @@
 				"idf.gitPath": "/usr/bin/git"
 			},
 			"extensions": [
+				"espressif.esp-idf-web",
 				"espressif.esp-idf-extension",
-				"espressif.esp-idf-web"
+				"ms-azuretools.vscode-docker",
+				"ms-vscode.cpptools-extension-pack"
 			]
 		}
 	},
