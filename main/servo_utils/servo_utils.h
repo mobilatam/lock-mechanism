@@ -21,10 +21,10 @@
 
 // Valores de duty cycle para diferentes ángulos del servomotor
 #define DUTY_CYCLE_SERVO_BATTERY_OPEN 1638
-#define DUTY_CYCLE_SERVO_BATTERY_CLOSE 8192
+#define DUTY_CYCLE_SERVO_BATTERY_CLOSE 65000
 
 #define DUTY_CYCLE_SERVO_DOOR_OPEN 1638
-#define DUTY_CYCLE_SERVO_DOOR_CLOSE 8192
+#define DUTY_CYCLE_SERVO_DOOR_CLOSE 65000
 
 void configure_servo(void);
 void move_servo(int duty);

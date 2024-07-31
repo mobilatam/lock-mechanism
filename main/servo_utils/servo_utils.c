@@ -59,6 +59,7 @@ void move_servo(int duty) {
 
 void lock_battery(void) {
     static uint8_t counter = 0;
+    ESP_LOGE(SERVO_TAG, "Lock battery");
 
     move_servo(DUTY_CYCLE_SERVO_BATTERY_CLOSE);
     vTaskDelay(pdMS_TO_TICKS(1000));
@@ -79,6 +80,7 @@ void lock_battery(void) {
 
 void unlock_battery(void) {
     static uint8_t counter = 0;
+    ESP_LOGE(SERVO_TAG, "Unlock battery");
 
     move_servo(DUTY_CYCLE_SERVO_BATTERY_OPEN);
     vTaskDelay(pdMS_TO_TICKS(1000));
@@ -99,6 +101,7 @@ void unlock_battery(void) {
 
 void lock_door(void) {
     static uint8_t counter = 0;
+    ESP_LOGE(SERVO_TAG, "Lock door");
 
     move_servo(DUTY_CYCLE_SERVO_DOOR_CLOSE);
     vTaskDelay(pdMS_TO_TICKS(1000));
@@ -120,6 +123,7 @@ void lock_door(void) {
 
 void unlock_door(void) {
     static uint8_t counter = 0;
+    ESP_LOGE(SERVO_TAG, "Unlock door");
 
     move_servo(DUTY_CYCLE_SERVO_DOOR_OPEN);
     vTaskDelay(pdMS_TO_TICKS(1000));
